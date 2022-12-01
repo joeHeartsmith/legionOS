@@ -1,0 +1,32 @@
+- a lot of this is going to be a huge pain, so will end up in post-beta releases
+
+- selinux policies
+- auditing policies
+	- ld.so.preload (and other important files that don't exist by default)
+- tripwire (and policies)
+- grsecurity/PAX (subscription?)
+- AIDE (trusted path execution)
+- secureboot
+- default compilation hardening:
+	- stack-smashing protection
+	- stack-clashing protection
+	- RELRO + BIND_NOW
+	- FORTIFY_SOURCE
+	- FCF-protection (control flow)
+	- PIE-by-default
+		- and ASLR
+		- and W^X
+- default sysctls (see https://madaidans-insecurities.github.io/guides/linux-hardening.html)
+- some sort of utility to easily enable ld.so *secure-execution mode*
+	- stops LD_PRELOAD attacks for things like privesc
+	- could possibly be a patch for OpenRC/systemd
+	- 2 methods to do it: https://security.stackexchange.com/questions/241063/how-to-globally-enable-ld-so-secure-execution-mode-for-all-applications
+- kernel hardening
+- standard ports hardening
+	- steal gentoo's USE-flags system
+- add ip6tables 'foward-only' policy to firewall scripts system (commented-out?)
+- setup for container support (i.e. dealing w/SELinux)
+- prefer bleeding-edge packages
+	- in today's world, running unstable software has probably become safer, becuase you're now only vulnerable to zero-days
+	- trade-off between stability and security (should the website be down because it crashed, or because it was hacked? regardless, users can tune this preference to their liking (either manually per-package, or by selecting one of the distro-update flavors)
+		- some stability should hopefully be restored through services like package-service-watchdog and the fs-boot-watchdog

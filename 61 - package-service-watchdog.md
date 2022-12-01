@@ -1,0 +1,6 @@
+- like fs-boot-watchdog, but for individual services
+- when booting up, check for service failures
+	- offer config file to add ignored services (i.e. networking)
+- depending on configuration, if a service was restarted, but failed (especially when invoked by the package manager), roll the service back automatically
+- this should work with the package manager.  for example, if we download a new package and it doesn't work, we need to report that to the package manager, so it can tell the main repo that there's a problem.
+	- this enables the package manager to not push bad/incompatible packages from BLEEDING to LATEST-TESTED until they are fixed (either via a new update, or via the PATCHES system)

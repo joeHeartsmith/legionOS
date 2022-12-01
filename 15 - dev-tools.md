@@ -1,0 +1,17 @@
+- akin to debian's 'build-essential' package
+- should drag-in the multi-lib package
+- offer 2 metapackages:
+	- dev-tools-essential (basically just python3, gcc, g++, gdb, make, and kernel-headers)
+	- dev-tools-common (adds the folloding to 'essential'):
+		- clang
+		- qemu user-mode emulation for common architectures
+			- maybe also pull in libraries
+		- flex
+		- bison
+		- git
+		- cvs
+		- autoconf, m4
+		- valgrind
+		- hardening/debug-testing tools (like fuzzers, etc)
+		- top 5 common editors
+		- tools for top 5 common languages

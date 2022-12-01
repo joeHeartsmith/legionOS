@@ -1,0 +1,11 @@
+- makes btrfs snapshots on reboot
+- if system is unable to boot, try again
+	- if system still can't boot, try the last snapshot
+	- rinse and repeat until the system boots
+		- flag that snapshot as the last good one, and print the bad ones to the screen so that the user can still mount them and explore the changes (or prune them)
+		- at this point (unless configured to automatically choose (which should be the default)), pick the last good snapshot, mark it as default, and continue to boot
+			- also offer alternative notification options
+				- e-mail
+				- add to MOTD for login
+- maybe also run after init completes (i.e. if all services (or at least the 'important' ones which have been flagged as such) fail to start, reboot and find the snapshot that results in a successful boot
+	- flagging hardware changes before/after boot would be useful here (i.e. NIC gets replaced so network script fails; don't hose the system because of this)

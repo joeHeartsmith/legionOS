@@ -1,0 +1,6 @@
+- STANDARDIZATION: POSIX/SUS vs LSB (fs heirarchy (LSB vs BSD hier(7)), utilities, etc)
+- Figure out porting to non amd64 architectures
+	- do we just cross-compile everything and make things complicated
+	- or do we just host separate instances on several machines (and still make things complicated)
+		- how does the package manager know where to find the correct arch?
+		- should probably just start with high-powered cloud VMs for i686, amd64, and aarch64
